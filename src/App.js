@@ -1,9 +1,7 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { textColor, backgroundColor, mainColor } from "./variables";
-import SelectMenu from "./components/SelectMenu";
-import DateMenu from "./components/DateMenu";
-import Button from "./components/Button";
+import General from "./components/General";
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -40,11 +38,7 @@ const App = () => {
 		<Main>
 			<GlobalStyle />
 			<h1> Histórico de cotizaciones </h1>
-			<SelectMenu />
-			<DateMenu />
-			<Button />
-			{/* RESULTADOS */}
-			{/* BOTON PARA MOSTRAR MÁS RESULTADOS */}
+			<General />
 		</Main>
 	);
 };
