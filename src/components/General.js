@@ -45,6 +45,10 @@ const General = () => {
 		setOffset(0);
 	}, [baseCurrency, referenceDate]);
 
+	useEffect(() => {
+		searchResult();
+	}, []);
+
 	return (
 		<div>
 			<SelectMenu
