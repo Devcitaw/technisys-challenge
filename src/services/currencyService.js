@@ -14,16 +14,17 @@ export const getCurrencies = async () => {
 	}
 };
 
-export const getQuotation = async (referenceDate, baseCurrency, symbols) => {
-	console.log(referenceDate, baseCurrency, symbols);
+export const getRates = async (referenceDate, baseCurrency, symbols) => {
+	// console.log(referenceDate, baseCurrency, symbols);
 	try {
 		const res = await axios.get(
 			`${URL_BASE}${referenceDate}?access_key=${process.env.REACT_APP_API_KEY}&base=${baseCurrency}&symbols=${symbols}`
 		);
-		const symbolList = res.data.symbols;
+		const rates = res.data.rates;
 
-		return symbolList;
+		return rates;
 	} catch (error) {
 		console.log(error);
+		return {};
 	}
 };

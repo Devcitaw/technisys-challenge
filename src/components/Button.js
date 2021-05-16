@@ -7,11 +7,11 @@ const ColorButton = styled.a`
 	background: ${highlightColor};
 `;
 
-const Button = () => {
+const Button = ({ onClick, buttonText }) => {
 	return (
-		<React.Fragment>
-			<ColorButton>Buscar cotizaciones</ColorButton>
-		</React.Fragment>
+		<div>
+			<ColorButton onClick={onClick}> {buttonText}</ColorButton>
+		</div>
 	);
 };
 

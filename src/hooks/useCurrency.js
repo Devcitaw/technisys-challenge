@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getCurrencies, getQuotation } from "../services/currencyService";
+import { getCurrencies, getRates } from "../services/currencyService";
 
 const useCurrency = () => {
 	const baseSymbols = ["CAD", "GBP", "USD", "EUR"];
@@ -15,9 +15,9 @@ const useCurrency = () => {
 			];
 			setOrderedSymbols(resKeys);
 		});
-		console.log("request");
+		// console.log("request");
 	}, []);
-	return { symbols, orderedSymbols, getQuotation };
+	return { symbols, orderedSymbols, getRates };
 };
 
 export default useCurrency;

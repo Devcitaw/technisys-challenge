@@ -1,29 +1,24 @@
-import React, { useState } from "react";
-import DatePicker, { registerLocale, addDays } from "react-datepicker";
+import React from "react";
+import DatePicker, { registerLocale } from "react-datepicker";
+import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css";
 import es from "date-fns/locale/es";
 registerLocale("es", es);
 
-const DateMenu = () => {
-	const [startDate, setStartDate] = useState(null);
-	const handleChangeRaw = (value) => {
-		if (value === "tomorrow") {
-			setStartDate(addDays(new Date(), 1));
-		}
-	};
-
+const DateMenu = ({ onChange, value }) => {
 	return (
 		<React.Fragment>
-			<label>Ingresá la fecha de cotización</label>
+			<label htmlFor="currency">Ingresá la fecha de cotización</label>
 			<DatePicker
+				id="currency"
+				name="currency"
 				locale="es"
-				selected={startDate}
-				onChange={(date) => setStartDate(date)}
-				maxDate={new Date()}
+				selected={value}
+				onChange={(value) => onChange(value)}
+				maxDate={moment()._d}
 				showDisabledMonthNavigation
 				dateFormat="dd/MM/yyyy"
 				placeholderText=" DD / MM / YYYY"
-				onChangeRaw={(event) => handleChangeRaw(event.target.value)}
 			/>
 		</React.Fragment>
 	);

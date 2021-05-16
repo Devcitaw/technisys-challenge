@@ -1,42 +1,26 @@
-import React, { useState, useEffect, useRef } from "react";
-import useCurrency from "../hooks/useCurrency";
+import React from "react";
 
-const LoadResults = ({ referenceDate, baseCurrency }) => {
-	const { orderedSymbols, getQuotation } = useCurrency();
-	const [offset, setOffset] = useState(0);
-	const [results, setResults] = useState([]);
-
-	const searchResult = async () => {
-		if (!orderedSymbols) {
-			return false;
-		}
-		try {
-			const symbols = orderedSymbols
-				.filter((_el, i) => i >= offset && i <= offset + 3)
-				.join(",");
-			const res = await getQuotation(referenceDate, baseCurrency, symbols);
-			setResults(res);
-			setOffset(offset + 4);
-		} catch (error) {
-			console.log(error);
-		}
-	};
-
-	const searchbtn = useRef(null);
-
-	useEffect(() => {
-		searchbtn.current.click();
-	}, [searchbtn]);
+const LoadResults = ({ results, searchResult }) => {
+	//PROBANDO EL CAMBIO DEL DATE y CURRENCY
+	// console.log(date);
+	// console.log(baseCurrency);
 
 	return (
 		<div>
-			{/* <div>{results && results.map((r) => JSON.stringify(r))}</div> */}
+			{results.map((a) =>
+				a.map((b) => (
+					<li>
+						<div>{b[0]}</div>
+						<div>{b[1]}</div>
+					</li>
+				))
+			)}
 			<div>
-				<p> RESULTADOS</p>
-				<button onClick={searchResult} ref={searchbtn}>
-					{" "}
-					BUSCAR{" "}
-				</button>
+				{results.length > 0 ? (
+					<button onClick={searchResult}>Ver más cotizaciones</button>
+				) : (
+					""
+				)}
 			</div>
 		</div>
 	);

@@ -5,7 +5,7 @@ const SelectMenu = ({ onChange, symbolList, value }) => {
 
 	return (
 		<div>
-			<label for="currency">Selecciona la moneda de referencia</label>
+			<label htmlFor="currency">Selecciona la moneda de referencia</label>
 			<select
 				id="currency"
 				name="currency"
@@ -16,7 +16,7 @@ const SelectMenu = ({ onChange, symbolList, value }) => {
 			>
 				{keys &&
 					keys.map((u) => (
-						<option value={u}>
+						<option value={u} key={u}>
 							({u}) {symbolList[u]}
 						</option>
 					))}
