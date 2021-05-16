@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 const LoadResults = ({ results, searchResult }) => {
 	//PROBANDO EL CAMBIO DEL DATE y CURRENCY
@@ -17,7 +18,7 @@ const LoadResults = ({ results, searchResult }) => {
 			)}
 			<div>
 				{results.length > 0 ? (
-					<button onClick={searchResult}>Ver más cotizaciones</button>
+					<Button buttonText="Ver más cotizaciones" onClick={searchResult} />
 				) : (
 					""
 				)}

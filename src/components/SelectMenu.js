@@ -1,4 +1,5 @@
 import React from "react";
+import { DEFAULT_CURRENCY } from "../constants/constants";
 
 const SelectMenu = ({ onChange, symbolList, value }) => {
 	const keys = Object.keys(symbolList);
@@ -28,6 +29,6 @@ const SelectMenu = ({ onChange, symbolList, value }) => {
 SelectMenu.defaultProps = {
 	onChange: () => {},
 	symbolList: [],
-	value: "EUR",
+	value: DEFAULT_CURRENCY,
 };
 export default SelectMenu;

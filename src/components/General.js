@@ -5,10 +5,11 @@ import useCurrency from "../hooks/useCurrency";
 import DateMenu from "./DateMenu";
 import LoadResults from "./LoadResults";
 import Button from "./Button";
+import { DEFAULT_CURRENCY } from "../constants/constants";
 
 const General = () => {
 	const [referenceDate, setReferenceDate] = useState(moment()._d);
-	const [baseCurrency, setBaseCurrency] = useState("EUR");
+	const [baseCurrency, setBaseCurrency] = useState(DEFAULT_CURRENCY);
 	const { symbols } = useCurrency();
 	const [results, setResults] = useState([]);
 	const { orderedSymbols, getRates } = useCurrency();
@@ -30,7 +31,7 @@ const General = () => {
 				setOffset(offset + 4);
 			} else {
 				alert(
-					"Lo sentimos, no tiene permiso para cambiar la moneda de referencia a otra que no sea EUR. Necesita cambiar la API KEY"
+					"Su API key solo permite búsquedas para la moneda de referencia (EUR) Euro"
 				);
 				setBaseCurrency("EUR");
 			}
