@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import styled from "styled-components";
-import styles from "../style/styles.css";
+import "../style/styles.css";
 
 const LoadResults = ({ results, searchResult }) => {
 	const RateResult = styled.div`

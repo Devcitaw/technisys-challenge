@@ -15,7 +15,6 @@ const useCurrency = () => {
 			];
 			setOrderedSymbols(resKeys);
 		});
-		// console.log("request");
 	}, []);
 	return { symbols, orderedSymbols, getRates };
 };
