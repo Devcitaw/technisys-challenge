@@ -84,6 +84,7 @@ const General = () => {
 
 	useEffect(() => {
 		searchResult();
+		console.log("coso");
 	}, []);
 
 	return (
