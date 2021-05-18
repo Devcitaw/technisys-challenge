@@ -6,6 +6,42 @@ import DateMenu from "./DateMenu";
 import LoadResults from "./LoadResults";
 import Button from "./Button";
 import { DEFAULT_CURRENCY } from "../constants/constants";
+import styled from "styled-components";
+import { device } from "../style/mediaQuery";
+
+const StyledDiv = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	height: auto;
+
+	h1 {
+		margin-bottom: 30px;
+		font-size: 25px;
+		text-align: center;
+
+		@media ${device.tablet} {
+			font-size: 30px;
+			text-align: left;
+		}
+
+		@media ${device.desktop} {
+			font-size: 30px;
+			text-align: left;
+		}
+	}
+
+	@media ${device.desktop} {
+		justify-content: space-around;
+		width: 100%;
+		height: auto;
+	}
+`;
+
+const SearchDiv = styled.div``;
+
+const ResultsDiv = styled(LoadResults)``;
 
 const General = () => {
 	const [referenceDate, setReferenceDate] = useState(moment()._d);
@@ -51,22 +87,29 @@ const General = () => {
 	}, []);
 
 	return (
-		<div>
-			<SelectMenu
-				symbolList={symbols}
-				onChange={setBaseCurrency}
-				value={baseCurrency}
-			/>
+		<StyledDiv>
+			<SearchDiv>
+				<h1> Histórico de cotizaciones </h1>
+				<SelectMenu
+					symbolList={symbols}
+					onChange={setBaseCurrency}
+					value={baseCurrency}
+				/>
 
-			<DateMenu onChange={setReferenceDate} value={referenceDate} />
-			{results.length === 0 ? (
-				<Button buttonText="Buscar cotizaciones" onClick={searchResult} />
-			) : (
-				""
-			)}
-
-			<LoadResults results={results} searchResult={searchResult} />
-		</div>
+				<DateMenu onChange={setReferenceDate} value={referenceDate} />
+				{results.length === 0 ? (
+					<Button
+						active
+						highlight={true}
+						buttonText="Buscar cotizaciones"
+						onClick={searchResult}
+					/>
+				) : (
+					<Button buttonText="Buscar cotizaciones" highlight={true} />
+				)}
+			</SearchDiv>
+			<ResultsDiv results={results} searchResult={searchResult} />
+		</StyledDiv>
 	);
 };
 

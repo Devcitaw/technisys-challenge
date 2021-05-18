@@ -1,17 +1,21 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
-import { textColor, backgroundColor, mainColor } from "./variables";
+import { textColor, backgroundColor, mainColor } from "./style/variables.js";
 import General from "./components/General";
+import { device } from "./style/mediaQuery";
 
 const GlobalStyle = createGlobalStyle`
 *{
-	font-family: 'Roboto', sans-serif;
+	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;500;600&display=swap');
+	
+	font-family: 'Hind Madurai', sans-serif;
+	/* font-family: 'Roboto', sans-serif; */
 	font-weight: 300;
 	color: ${textColor};
 }
 
 body {
-	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 	padding: 0;
 	margin: 0;
 	background: ${backgroundColor};
@@ -22,22 +26,39 @@ body {
 `;
 
 const Main = styled.div`
-	margin-top: 50px;
 	background: ${mainColor};
 	display: flex;
 	flex-direction: column;
-	width: 670px;
+	min-width: 375px;
+	max-width: 768px;
+	padding: 20px 40px;
+	box-sizing: border-box;
+	margin: 50px;
 	box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.1),
 		-3px -3px 5px 1px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
-	padding: 50px;
+
+	@media ${device.tablet} {
+		width: 600px;
+		margin: 50px;
+		max-width: 90%;
+		box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.1),
+			-3px -3px 5px 1px rgba(0, 0, 0, 0.1);
+		border-radius: 10px;
+		padding: 50px 100px;
+	}
+
+	@media ${device.desktop} {
+		min-width: 1000px;
+	}
 `;
+
+console.log(device.desktop);
 
 const App = () => {
 	return (
 		<Main>
 			<GlobalStyle />
-			<h1> Histórico de cotizaciones </h1>
 			<General />
 		</Main>
 	);

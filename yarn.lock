@@ -4023,6 +4023,11 @@
   dependencies:
     "cssom" "~0.3.6"
 
+"currency-flags@^3.2.1":
+  "integrity" "sha512-5IBjKoPlrEX2KAW5GWrldPnSWybsbeiltLe63y1pEeIOdaEqMu3T6pfKgDud9oq3G9i8hMvzSQGiPO+prF0+Hg=="
+  "resolved" "https://registry.npmjs.org/currency-flags/-/currency-flags-3.2.1.tgz"
+  "version" "3.2.1"
+
 "cyclist@^1.0.1":
   "integrity" "sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk="
   "resolved" "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz"
