@@ -1131,17 +1131,10 @@
     "core-js-pure" "^3.0.0"
     "regenerator-runtime" "^0.13.4"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.5", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
   "integrity" "sha512-BogPQ7ciE6SYAUPtlm9tWbgI9+2AgqSam6QivMgXgAT+fKbgppaj4ZX15MHeLC1PVF5sNk70huBu20XxWOs8Cg=="
   "resolved" "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.18.tgz"
   "version" "7.12.18"
-  dependencies:
-    "regenerator-runtime" "^0.13.4"
-
-"@babel/runtime@^7.12.5":
-  "integrity" "sha512-JELkvo/DlpNdJ7dlyw/eY7E0suy5i5GQH+Vlxaq1nsNJ+H7f4Vtv3jMeCEgRhZZQFXTjldYfQgv2qmM6M1v5wA=="
-  "resolved" "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.0.tgz"
-  "version" "7.14.0"
   dependencies:
     "regenerator-runtime" "^0.13.4"
 
@@ -1215,7 +1208,7 @@
   "resolved" "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz"
   "version" "10.1.0"
 
-"@emotion/is-prop-valid@^0.8.8":
+"@emotion/is-prop-valid@^0.8.7", "@emotion/is-prop-valid@^0.8.8":
   "integrity" "sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA=="
   "resolved" "https://registry.npmjs.org/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz"
   "version" "0.8.8"
@@ -1563,6 +1556,30 @@
   "version" "6.0.1"
   dependencies:
     "@sinonjs/commons" "^1.7.0"
+
+"@styled-icons/boxicons-regular@^10.23.0":
+  "integrity" "sha512-cVBXsgDzC9lZOhBaurxJcgiRpl3mMxNHsD0+PKi23yaEU20zIyBPjRgVw+qaqKKAUNONDkWej1vwiL5KericPw=="
+  "resolved" "https://registry.npmjs.org/@styled-icons/boxicons-regular/-/boxicons-regular-10.23.0.tgz"
+  "version" "10.23.0"
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    "@styled-icons/styled-icon" "^10.6.0"
+
+"@styled-icons/evaicons-outline@^10.18.0":
+  "integrity" "sha512-6D352LtvtzfHlhxgUeair6NPfyJ0y6V+1r710w1qoEVO/mnc9F+ED6MaOCDv8GeDOM3eCPd8y2Fs6EA8zKuv/A=="
+  "resolved" "https://registry.npmjs.org/@styled-icons/evaicons-outline/-/evaicons-outline-10.18.0.tgz"
+  "version" "10.18.0"
+  dependencies:
+    "@babel/runtime" "^7.10.5"
+    "@styled-icons/styled-icon" "^10.6.0"
+
+"@styled-icons/styled-icon@^10.6.0":
+  "integrity" "sha512-/A95L3peioLoWFiy+/eKRhoQ9r/oRrN/qzbSX4hXU1nGP2rUXcX3LWUhoBNAOp9Rw38ucc/4ralY427UUNtcGQ=="
+  "resolved" "https://registry.npmjs.org/@styled-icons/styled-icon/-/styled-icon-10.6.3.tgz"
+  "version" "10.6.3"
+  dependencies:
+    "@babel/runtime" "^7.10.5"
+    "@emotion/is-prop-valid" "^0.8.7"
 
 "@surma/rollup-plugin-off-main-thread@^1.1.1":
   "integrity" "sha512-yBMPqmd1yEJo/280PAMkychuaALyQ9Lkb5q1ck3mjJrFuEobIfhnQ4J3mbvBoISmR3SWMWV+cGB/I0lCQee79A=="
@@ -10717,7 +10734,7 @@
     "loader-utils" "^2.0.0"
     "schema-utils" "^2.7.0"
 
-"styled-components@^5.3.0", "styled-components@>= 2":
+"styled-components@*", "styled-components@^5.3.0", "styled-components@>= 2", "styled-components@>=4.1.0 <6":
   "integrity" "sha512-bPJKwZCHjJPf/hwTJl6TbkSZg/3evha+XPEizrZUGb535jLImwDUdjTNxXqjjaASt2M4qO4AVfoHJNe3XB/tpQ=="
   "resolved" "https://registry.npmjs.org/styled-components/-/styled-components-5.3.0.tgz"
   "version" "5.3.0"

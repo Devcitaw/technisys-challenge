@@ -6,12 +6,10 @@ import { device } from "./style/mediaQuery";
 
 const GlobalStyle = createGlobalStyle`
 *{
-	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
-	@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;500;600&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400&display=swap');
 	
 	font-family: 'Hind Madurai', sans-serif;
-	/* font-family: 'Roboto', sans-serif; */
-	font-weight: 300;
+	font-weight: 400;
 	color: ${textColor};
 }
 

@@ -94,9 +94,14 @@ const General = () => {
 					symbolList={symbols}
 					onChange={setBaseCurrency}
 					value={baseCurrency}
+					label="Selecciona la moneda de referencia"
 				/>
 
-				<DateMenu onChange={setReferenceDate} value={referenceDate} />
+				<DateMenu
+					onChange={setReferenceDate}
+					value={referenceDate}
+					label="Ingresa la fecha de cotización"
+				/>
 				{results.length === 0 ? (
 					<Button
 						active
@@ -108,7 +113,9 @@ const General = () => {
 					<Button buttonText="Buscar cotizaciones" highlight={true} />
 				)}
 			</SearchDiv>
-			<ResultsDiv results={results} searchResult={searchResult} />
+			{results.length > 0 && (
+				<ResultsDiv results={results} searchResult={searchResult} />
+			)}
 		</StyledDiv>
 	);
 };

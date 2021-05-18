@@ -16,7 +16,7 @@ const HighlightedButton = styled.a`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	cursor: pointer;
+	cursor: ${(props) => (props.active ? "pointer" : "default")};
 `;
 
 const NormalButton = styled(HighlightedButton)`
@@ -24,6 +24,7 @@ const NormalButton = styled(HighlightedButton)`
 	background: ${mainColor};
 	border: 1px solid ${highlightColor};
 	box-shadow: 5px 5px 5px 3px rgba(255, 113, 65, 0.2);
+	cursor: pointer;
 `;
 
 const Button = ({ onClick, buttonText, highlight, active }) => {
