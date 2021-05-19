@@ -15,7 +15,6 @@ export const getCurrencies = async () => {
 };
 
 export const getRates = async (referenceDate, baseCurrency, symbols) => {
-	// console.log(referenceDate, baseCurrency, symbols);
 	try {
 		const res = await axios.get(
 			`${URL_BASE}${referenceDate}?access_key=${process.env.REACT_APP_API_KEY}&base=${baseCurrency}&symbols=${symbols}`

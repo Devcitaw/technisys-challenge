@@ -51,8 +51,6 @@ const Main = styled.div`
 	}
 `;
 
-console.log(device.desktop);
-
 const App = () => {
 	return (
 		<Main>
